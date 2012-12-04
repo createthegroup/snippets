@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+Ply.core.notify('${1:note}', ${2:sender}, \{
+    ${3:key}: ${4:value}
+\});
+]]></content>
+	<tabTrigger>Ply.core.notify</tabTrigger>
+	<scope>source.js</scope>
+	<description>Notify Ply of an event</description>
+</snippet>

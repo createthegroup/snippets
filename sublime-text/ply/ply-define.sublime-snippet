@@ -1,0 +1,44 @@
+<snippet>
+    <content><![CDATA[
+(function (\$) {
+
+    'use strict';
+
+    Ply.ui.define('${1:controller}_${2:action}', {
+
+        options: {},
+
+        data: {},
+
+        __init: function () {
+
+
+            return;
+        },
+
+        __elements: {
+            ${3:key}: '${4:.element_selector}'
+        },
+
+        __partials: {
+            ${3:key}: '${5:partial_name}'
+        },
+
+        __notifications: {
+            '${6:notification-name}': '${7:notificationFunction}'
+        },
+
+        __destroy: function () {
+
+
+            return;
+        }
+
+    });
+
+})(jQuery);
+]]></content>
+    <tabTrigger>Ply.ui.define</tabTrigger>
+    <scope>source.js</scope>
+    <description>Basic Ply View Setup</description>
+</snippet>

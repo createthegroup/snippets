@@ -1,0 +1,93 @@
+<snippet>
+    <content><![CDATA[
+(function (\$) {
+
+    'use strict';
+
+    Ply.ui.define('${1:controller}_${2:action}', {
+        
+        options: {
+            ${3:key}: ${4:defaultValue}
+        },
+
+        data: {
+            ${6:key}: ${7:defaultValue}
+        },
+
+        __init: function () {
+
+            // this.view == \$('.${1:controller}_${2:action}, .view-${1:controller}_${2:action}')
+            // this.name == '${1:controller}_${2:action}'
+            // this.options == \{ ${3:key}: ${5:value} \}
+            // this.data == \{ ${6:key}: ${8:value} \}
+            // this.elements == \{ ${9:key}: Object, ${10:.element_selector}: Object \}
+
+            this.events();
+
+            return;
+        },
+
+        __elements: {
+            ${9:key}: '${10:.element-selector}',
+            ${11:key}: '${12:.element_selector}'
+        },
+
+        __partials: {
+            ${11:key}: '${13:partial_name}'
+        },
+
+        __notifications: {
+            '${14:notification-name}': '${15:notificationMethod}'
+        },
+
+        events: function () {
+
+            var self = this;
+
+            this.elements.${9:key}
+                .click(function (e) {
+                    e.preventDefault();
+                    var el = \$(this);
+                });
+
+            return;
+        },
+
+        ${15:notificationMethod}: function (note, sender, data) {
+            /* Notify this method from other ply views using:
+                
+                Ply.core.notify('${14:notification-name}', this, \{
+                    ${16:key}: ${17:value}
+                \});
+
+                Access data sent via notification like this:
+                alert(data.${16:key}); // This alert ${17:value}
+            */
+        },
+
+        __destroy: function () {
+
+            return;
+        }
+
+    });
+
+})(jQuery);
+
+/* How to register this view form the .aspx page 
+    <script type="text/javascript">
+        Ply.ui.register('${1:controller}_${2:action}', {
+            options: {
+                ${3:key}: ${5:value}
+            },
+            data: {
+                ${6:key}: ${8:value}
+            }
+        });
+    </script>
+*/
+]]></content>
+    <tabTrigger>Ply.ui.define</tabTrigger>
+    <scope>source.js</scope>
+    <description>Basic Ply View Setup - Comments</description>
+</snippet>
